@@ -9,7 +9,7 @@
 
   --spacer: 1rem;
   --spacer-medium: 2rem;
-  --spacer-large: 4rem;
+  --spacer-large: 3rem;
 }
 *,
 *::before,
@@ -61,7 +61,7 @@ img {
 }
 
 body {
-  font-family: var(--ff-body);
+  font-family: "Inter", sans-serif;
   font-size: var(--body-font-size);
   color: var(--clr-primary-900);
 }
@@ -74,7 +74,11 @@ h2 {
   font-size: 3rem;
   font-weight: 700;
   color: var(--primary-orange);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  line-height: 2;
 }
 
 h3 {
@@ -82,9 +86,6 @@ h3 {
   font-weight: 700;
   color: var(--neutral-off-white);
   margin-bottom: 1rem;
-}
-p {
-  line-height: 2;
 }
 
 .nav {
@@ -131,8 +132,8 @@ p {
 
 .main-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 0.5fr 0.5fr;
+  grid-template-columns: 1.2fr 1.2fr 1.2fr;
+  grid-template-rows: 0.8fr 0.8fr 0.8fr;
   gap: var(--spacer-medium);
 }
 
@@ -151,7 +152,24 @@ p {
   grid-row: 2;
 }
 
+.hero-content > * {
+  width: 100%;
+}
+.btn {
+  display: inline-block;
+  /* width: 50%; */
+  text-align: center;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--neutral-off-white);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background-color: var(--primary-red);
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+}
 .sidebar {
+  height: auto;
   grid-column: 3;
   grid-row: 1 / span 2;
 
@@ -173,7 +191,7 @@ p {
   border-bottom: solid 1px var(--neutral-dark-gb);
   position: absolute;
   left: 0;
-  top: 18%;
+  top: 15%;
   z-index: 1;
 }
 
@@ -188,23 +206,21 @@ p {
   font-weight: 700;
 }
 .article {
-  gap: var(--spacer-medium);
+  gap: var(--spacer);
+  margin-top: 2rem;
+  color: var(--neutral-dark-gb);
 }
 
-.btn {
-  display: inline-block;
-  /* width: 50%; */
-  text-align: center;
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--neutral-off-white);
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  background-color: var(--primary-red);
-  padding: 1rem 2rem;
+.number {
+  font-size: 2rem;
+  color: var(--neutral-gblue);
 }
 
-@media (max-width: 950px) {
+@media (max-width: 800px) {
+  .container {
+    max-width: 90%;
+    padding: 0.5rem;
+  }
   .menu-icon {
     display: block;
   }
@@ -234,5 +250,9 @@ p {
   }
   .hero-content {
     flex-direction: column;
+  }
+
+  .article > .pic {
+    width: 50%;
   }
 }
